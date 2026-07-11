@@ -1,0 +1,56 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:recommended",
+    ":semanticCommits",
+    ":dependencyDashboard",
+    "helpers:pinGitHubActionDigestsToSemver"
+  ],
+  "schedule": ["before 6pm on friday"],
+  "timezone": "America/New_York",
+  "assignees": ["bakerkj"],
+  "pre-commit": {
+    "enabled": true
+  },
+  "customManagers": [
+    {
+      "customType": "regex",
+      "description": "GitHub runner versions in shell scripts and YAML within workflows",
+      "managerFilePatterns": ["/.github/workflows/.+\\.ya?ml$/"],
+      "matchStrings": [
+        "runner=\"(?<depName>ubuntu|macos|windows)-(?<currentValue>[\\w.-]+)\"",
+        "runs-on:\\s*(?<depName>ubuntu|macos|windows)-(?<currentValue>[\\w.-]+)"
+      ],
+      "datasourceTemplate": "github-runners"
+    },
+    {
+      "customType": "regex",
+      "description": "npm packages pinned via pre-commit additional_dependencies",
+      "managerFilePatterns": ["/^\\.pre-commit-config\\.yaml$/"],
+      "matchStrings": [
+        "\"(?<depName>@?[^\"@\\s]+(?:/[^\"@\\s]+)?)@(?<currentValue>[^\"\\s]+)\""
+      ],
+      "datasourceTemplate": "npm",
+      "versioningTemplate": "npm"
+    },
+    {
+      "customType": "regex",
+      "description": "uv tool required-version pin in pyproject.toml [tool.uv]",
+      "managerFilePatterns": ["/(^|/)pyproject\\.toml$/"],
+      "matchStrings": ["required-version\\s*=\\s*\"(?<currentValue>[^\"]+)\""],
+      "depNameTemplate": "uv",
+      "datasourceTemplate": "pypi",
+      "versioningTemplate": "pep440"
+    }
+  ],
+  "packageRules": [
+    {
+      "matchManagers": ["github-actions"],
+      "groupName": "github-actions"
+    },
+    {
+      "matchManagers": ["pre-commit"],
+      "groupName": "pre-commit hooks"
+    }
+  ]
+}

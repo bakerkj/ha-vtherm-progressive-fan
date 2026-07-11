@@ -1,0 +1,34 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "VTherm Progressive Fan",
+        "description": "Relie un VTherm et une clim pour piloter le ventilateur de façon progressive.",
+        "data": {
+          "vtherm_entity_id": "Entité VTherm",
+          "climate_entity_id": "Entité climate sous-jacente",
+          "fan_mode_order": "Ordre des fan_modes (séparés par des virgules)"
+        }
+      }
+    },
+    "error": {
+      "missing_entity": "Les deux entités sont obligatoires."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "VTherm Progressive Fan",
+        "description": "Ajuste les paramètres de l’auto-fan progressif.",
+        "data": {
+          "vtherm_entity_id": "Entité VTherm",
+          "climate_entity_id": "Entité climate sous-jacente",
+          "fan_mode_order": "Ordre des fan_modes (séparés par des virgules)"
+        }
+      }
+    },
+    "error": {
+      "missing_entity": "Les deux entités sont obligatoires."
+    }
+  }
+}

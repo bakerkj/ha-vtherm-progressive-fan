@@ -1,0 +1,67 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "VTherm Progressive Fan",
+        "description": "Link a Versatile Thermostat and its underlying climate entity.",
+        "data": {
+          "vtherm_entity_id": "VTherm climate entity",
+          "climate_entity_id": "Underlying climate entity",
+          "current_temperature_sensor_entity_id": "Current temperature sensor (optional)"
+        },
+        "data_description": {
+          "current_temperature_sensor_entity_id": "Smoothed room-temperature sensor to use as the room's current temperature — typically the same sensor VTherm regulates from (e.g. sensor.<room>_average_temperature). Leave empty to fall back to the underlying climate's own current_temperature, which is usually quantized to 0.5°F and can cause band flap."
+        }
+      },
+      "fan_modes": {
+        "title": "Fan mode order",
+        "description": "Detected fan_modes on {climate_entity}: {detected_modes}\n\nSelect the fan modes to use for progressive control, in order from quietest to strongest. `auto` is reserved as the hand-back signal and is excluded automatically.",
+        "data": {
+          "fan_mode_order": "Fan modes (order matters)"
+        }
+      },
+      "reconfigure": {
+        "title": "VTherm Progressive Fan — reconfigure",
+        "description": "Change the linked entities. Fan-mode order is preserved and updated for the newly selected climate.",
+        "data": {
+          "vtherm_entity_id": "VTherm climate entity",
+          "climate_entity_id": "Underlying climate entity",
+          "current_temperature_sensor_entity_id": "Current temperature sensor (optional)"
+        },
+        "data_description": {
+          "current_temperature_sensor_entity_id": "Smoothed room-temperature sensor to use as the room's current temperature — typically the same sensor VTherm regulates from (e.g. sensor.<room>_average_temperature). Leave empty to fall back to the underlying climate's own current_temperature, which is usually quantized to 0.5°F and can cause band flap."
+        }
+      }
+    },
+    "error": {
+      "missing_entity": "Both entities are required.",
+      "same_entity": "The VTherm and the underlying climate cannot be the same entity.",
+      "no_modes_selected": "Select at least one fan mode.",
+      "unknown_modes": "One or more selected modes are not supported by the underlying climate entity."
+    },
+    "reconfigure_successful": "Configuration updated"
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "VTherm Progressive Fan — options",
+        "description": "Change the linked entities or reorder the fan modes.",
+        "data": {
+          "vtherm_entity_id": "VTherm climate entity",
+          "climate_entity_id": "Underlying climate entity",
+          "current_temperature_sensor_entity_id": "Current temperature sensor (optional)",
+          "fan_mode_order": "Fan modes (order matters)"
+        },
+        "data_description": {
+          "current_temperature_sensor_entity_id": "Smoothed room-temperature sensor to use as the room's current temperature — typically the same sensor VTherm regulates from (e.g. sensor.<room>_average_temperature). Leave empty to fall back to the underlying climate's own current_temperature, which is usually quantized to 0.5°F and can cause band flap."
+        }
+      }
+    },
+    "error": {
+      "missing_entity": "Both entities are required.",
+      "same_entity": "The VTherm and the underlying climate cannot be the same entity.",
+      "no_modes_selected": "Select at least one fan mode.",
+      "unknown_modes": "One or more selected modes are not supported by the underlying climate entity."
+    }
+  }
+}

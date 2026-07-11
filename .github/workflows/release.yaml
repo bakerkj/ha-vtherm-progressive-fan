@@ -1,0 +1,32 @@
+name: Release
+
+on:
+  release:
+    types: [published]
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+      - name: Validate version matches release tag
+        run: |
+          version=$(python3 -c "import json; print(json.load(open('custom_components/vtherm_progressive_fan/manifest.json'))['version'])")
+          tag="${GITHUB_REF#refs/tags/v}"
+          if [ "$version" != "$tag" ]; then
+            echo "manifest.json version ($version) does not match release tag ($tag)"
+            exit 1
+          fi
+      - name: Build release zip
+        run: |
+          cd custom_components/vtherm_progressive_fan
+          zip -r "$GITHUB_WORKSPACE/vtherm_progressive_fan.zip" .
+      - name: Attach zip to release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run:
+          gh release upload "${GITHUB_REF#refs/tags/}" vtherm_progressive_fan.zip
+          --clobber
