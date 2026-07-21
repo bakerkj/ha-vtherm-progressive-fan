@@ -1,7 +1,7 @@
 {
   "domain": "vtherm_progressive_fan",
   "name": "VTherm Progressive Fan",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "documentation": "https://github.com/bakerkj/ha-vtherm-progressive-fan",
   "homeassistant": "2026.1.0",
   "issue_tracker": "https://github.com/bakerkj/ha-vtherm-progressive-fan/issues",
