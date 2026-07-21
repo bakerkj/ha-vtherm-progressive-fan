@@ -1,6 +1,6 @@
 [project]
 name = "ha-vtherm-progressive-fan"
-version = "0.0.1" # x-release-please-version
+version = "0.0.2" # x-release-please-version
 description = "Home Assistant integration that progressively steps a mini-split's fan speed based on how far the room is from the target set by a Versatile Thermostat."
 requires-python = ">=3.14.2"
 dependencies = []
