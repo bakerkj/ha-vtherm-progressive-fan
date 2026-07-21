@@ -22,7 +22,7 @@
       },
       "reconfigure": {
         "title": "VTherm Progressive Fan — reconfigure",
-        "description": "Change the linked entities. Fan-mode order is preserved and updated for the newly selected climate.",
+        "description": "Change the linked entities. The next step lets you review the fan-mode order for the selected climate.",
         "data": {
           "vtherm_entity_id": "VTherm climate entity",
           "climate_entity_id": "Underlying climate entity",

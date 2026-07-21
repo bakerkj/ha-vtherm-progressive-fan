@@ -3,6 +3,7 @@
   "name": "VTherm Progressive Fan",
   "version": "0.0.0",
   "documentation": "https://github.com/bakerkj/ha-vtherm-progressive-fan",
+  "homeassistant": "2026.1.0",
   "issue_tracker": "https://github.com/bakerkj/ha-vtherm-progressive-fan/issues",
   "codeowners": [
     "@bakerkj"
@@ -14,6 +15,6 @@
     "versatile_thermostat"
   ],
   "config_flow": true,
-  "iot_class": "local_push",
+  "iot_class": "calculated",
   "integration_type": "helper"
 }

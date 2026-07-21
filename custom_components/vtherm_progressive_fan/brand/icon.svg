@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" role="img" aria-label="VTherm Progressive Fan">
+  <defs>
+    <linearGradient id="body" x1="24" y1="20" x2="232" y2="236" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0E4C5C"/>
+      <stop offset="1" stop-color="#0EA5E9"/>
+    </linearGradient>
+    <linearGradient id="blade" x1="70" y1="40" x2="190" y2="180" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#CFE9F7"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Rounded tile -->
+  <rect x="0" y="0" width="256" height="256" rx="56" fill="url(#body)"/>
+
+  <!-- Recessed disc: separates the white blades from the lighter
+       bottom-right of the background gradient. -->
+  <circle cx="128" cy="128" r="94" fill="#0B3D4C" opacity="0.30"/>
+
+  <!-- Fan guard. The enclosing ring is what reads "fan" rather than
+       "propeller" or "flower" at small sizes. -->
+  <circle cx="128" cy="128" r="88" fill="none" stroke="#F8FAFC" stroke-width="9" opacity="0.92"/>
+
+  <!-- Five blades. Straight leading edge from the hub to a blunt tip, then a
+       curved trailing edge back — asymmetric, so rotation direction reads.
+       All five converge on the hub so they form one rotor, not loose petals. -->
+  <g fill="url(#blade)">
+    <path d="M128 128 L146 50 C166 42 184 56 178 76 C170 100 150 116 128 128 Z"/>
+    <path d="M128 128 L146 50 C166 42 184 56 178 76 C170 100 150 116 128 128 Z"
+          transform="rotate(72 128 128)"/>
+    <path d="M128 128 L146 50 C166 42 184 56 178 76 C170 100 150 116 128 128 Z"
+          transform="rotate(144 128 128)"/>
+    <path d="M128 128 L146 50 C166 42 184 56 178 76 C170 100 150 116 128 128 Z"
+          transform="rotate(216 128 128)"/>
+    <path d="M128 128 L146 50 C166 42 184 56 178 76 C170 100 150 116 128 128 Z"
+          transform="rotate(288 128 128)"/>
+  </g>
+
+  <!-- Hub: white collar over the blade convergence, warm core because the
+       fan speed here is driven by temperature. -->
+  <circle cx="128" cy="128" r="21" fill="#F8FAFC"/>
+  <circle cx="128" cy="128" r="10" fill="#F59E0B"/>
+</svg>
