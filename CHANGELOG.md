@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.0.2](https://github.com/bakerkj/ha-vtherm-progressive-fan/compare/v0.0.1...v0.0.2) (2026-07-21)
+
+
+### Miscellaneous Chores
+
+* **deps:** update actions/setup-python action to v7 ([a1e2d17](https://github.com/bakerkj/ha-vtherm-progressive-fan/commit/a1e2d17d6fb5b0b543f85355d8678626616cafc0))
+* **deps:** update actions/setup-python action to v7 ([6b44bf7](https://github.com/bakerkj/ha-vtherm-progressive-fan/commit/6b44bf7698b981bdd499434565e0a4ccc66af42f))
+
 ## 0.0.1 (2026-07-21)
 
 
