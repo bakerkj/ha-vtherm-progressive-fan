@@ -11,8 +11,8 @@ import voluptuous as vol
 from homeassistant import config_entries
 from homeassistant.components.climate import DOMAIN as CLIMATE_DOMAIN
 from homeassistant.components.sensor import DOMAIN as SENSOR_DOMAIN
-from homeassistant.core import callback
 from homeassistant.config_entries import ConfigFlowResult
+from homeassistant.core import callback
 from homeassistant.helpers.selector import (
     EntitySelector,
     EntitySelectorConfig,
@@ -30,7 +30,6 @@ from .const import (
     DEFAULT_FAN_MODE_ORDER,
     DOMAIN,
 )
-
 
 # Modes we never want in the boost sequence — "auto" is reserved as the
 # hand-back signal, and vendor-specific labels like "on" don't map to a speed.
@@ -284,7 +283,7 @@ class VThermProgressiveFanConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
     @callback
     def async_get_options_flow(
         config_entry: config_entries.ConfigEntry,
-    ) -> "VThermProgressiveFanOptionsFlowHandler":
+    ) -> VThermProgressiveFanOptionsFlowHandler:
         return VThermProgressiveFanOptionsFlowHandler()
 
 

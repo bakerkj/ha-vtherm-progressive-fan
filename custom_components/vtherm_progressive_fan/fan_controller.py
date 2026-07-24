@@ -23,22 +23,19 @@ interactions were the source of several bugs, so they were removed.
 from __future__ import annotations
 
 import asyncio
+import concurrent.futures
 import logging
 import math
+from collections.abc import Callable, Iterable
 from dataclasses import dataclass
-from collections.abc import Callable
-from typing import Any, Iterable
+from typing import Any
 
 from homeassistant.components.climate import DOMAIN as CLIMATE_DOMAIN
-from homeassistant.const import ATTR_TEMPERATURE
+from homeassistant.const import ATTR_TEMPERATURE, UnitOfTemperature
 from homeassistant.core import Event, EventStateChangedData, HomeAssistant, callback
 from homeassistant.helpers.event import async_track_state_change_event
-
-from vtherm_api import PluginClimate
-
-from homeassistant.const import UnitOfTemperature
-
 from homeassistant.util.unit_conversion import TemperatureConverter
+from vtherm_api import PluginClimate
 
 from .const import (
     DEFAULT_DEMOTE_DWELL_SECONDS,
@@ -211,20 +208,23 @@ class VThermProgressiveFanPlugin(PluginClimate):
         # current_temperature when no override sensor is configured.
         old_state = event.data["old_state"]
         new_state = event.data["new_state"]
-        if old_state is not None and new_state is not None:
-            if old_state.state == new_state.state:
-                old_attrs = dict(old_state.attributes)
-                new_attrs = dict(new_state.attributes)
-                old_fan = old_attrs.pop("fan_mode", None)
-                new_fan = new_attrs.pop("fan_mode", None)
-                if old_attrs == new_attrs:
-                    _LOGGER.debug(
-                        "Ignoring fan_mode-only state change for %s (%s -> %s)",
-                        self._climate_entity_id,
-                        old_fan,
-                        new_fan,
-                    )
-                    return
+        if (
+            old_state is not None
+            and new_state is not None
+            and old_state.state == new_state.state
+        ):
+            old_attrs = dict(old_state.attributes)
+            new_attrs = dict(new_state.attributes)
+            old_fan = old_attrs.pop("fan_mode", None)
+            new_fan = new_attrs.pop("fan_mode", None)
+            if old_attrs == new_attrs:
+                _LOGGER.debug(
+                    "Ignoring fan_mode-only state change for %s (%s -> %s)",
+                    self._climate_entity_id,
+                    old_fan,
+                    new_fan,
+                )
+                return
         await self.async_apply_now(reason="target_state_change")
 
     def remove_listeners(self) -> None:
@@ -250,7 +250,7 @@ class VThermProgressiveFanPlugin(PluginClimate):
     def _log_future_exception(self, future) -> None:
         try:
             exc = future.exception()
-        except Exception:
+        except concurrent.futures.CancelledError:
             return
         if exc is not None:
             _LOGGER.exception(
