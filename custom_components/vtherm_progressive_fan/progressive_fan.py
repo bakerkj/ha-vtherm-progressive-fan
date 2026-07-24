@@ -9,7 +9,7 @@ band-index Schmitt-trigger ladder.
 
 from __future__ import annotations
 
-from typing import Sequence
+from collections.abc import Sequence
 
 from .const import DEFAULT_FAN_MODE_ORDER, DEFAULT_SCHMITT_ZONES
 
