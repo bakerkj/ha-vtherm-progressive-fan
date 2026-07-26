@@ -10,7 +10,7 @@
           "current_temperature_sensor_entity_id": "Current temperature sensor (optional)"
         },
         "data_description": {
-          "current_temperature_sensor_entity_id": "Smoothed room-temperature sensor to use as the room's current temperature — typically the same sensor VTherm regulates from (e.g. sensor.<room>_average_temperature). Leave empty to fall back to the underlying climate's own current_temperature, which is usually quantized to 0.5°F and can cause band flap."
+          "current_temperature_sensor_entity_id": "Smoothed room-temperature sensor to use as the room's current temperature — typically the same sensor VTherm regulates from (e.g. sensor.living_room_average_temperature). Leave empty to fall back to the underlying climate's own current_temperature, which is usually quantized to 0.5°F and can cause band flap."
         }
       },
       "fan_modes": {
@@ -29,7 +29,7 @@
           "current_temperature_sensor_entity_id": "Current temperature sensor (optional)"
         },
         "data_description": {
-          "current_temperature_sensor_entity_id": "Smoothed room-temperature sensor to use as the room's current temperature — typically the same sensor VTherm regulates from (e.g. sensor.<room>_average_temperature). Leave empty to fall back to the underlying climate's own current_temperature, which is usually quantized to 0.5°F and can cause band flap."
+          "current_temperature_sensor_entity_id": "Smoothed room-temperature sensor to use as the room's current temperature — typically the same sensor VTherm regulates from (e.g. sensor.living_room_average_temperature). Leave empty to fall back to the underlying climate's own current_temperature, which is usually quantized to 0.5°F and can cause band flap."
         }
       }
     },
@@ -39,7 +39,9 @@
       "no_modes_selected": "Select at least one fan mode.",
       "unknown_modes": "One or more selected modes are not supported by the underlying climate entity."
     },
-    "reconfigure_successful": "Configuration updated"
+    "abort": {
+      "reconfigure_successful": "Configuration updated"
+    }
   },
   "options": {
     "step": {
@@ -53,7 +55,7 @@
           "fan_mode_order": "Fan modes (order matters)"
         },
         "data_description": {
-          "current_temperature_sensor_entity_id": "Smoothed room-temperature sensor to use as the room's current temperature — typically the same sensor VTherm regulates from (e.g. sensor.<room>_average_temperature). Leave empty to fall back to the underlying climate's own current_temperature, which is usually quantized to 0.5°F and can cause band flap."
+          "current_temperature_sensor_entity_id": "Smoothed room-temperature sensor to use as the room's current temperature — typically the same sensor VTherm regulates from (e.g. sensor.living_room_average_temperature). Leave empty to fall back to the underlying climate's own current_temperature, which is usually quantized to 0.5°F and can cause band flap."
         }
       }
     },
