@@ -13,7 +13,7 @@ dev = [
 ]
 
 [tool.uv]
-required-version = "==0.11.*"
+required-version = "==0.12.*"
 prerelease = "allow"
 package = false
 
