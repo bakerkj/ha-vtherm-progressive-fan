@@ -18,15 +18,13 @@ from homeassistant.components.switch import SwitchEntity
 from homeassistant.config_entries import ConfigEntry
 from homeassistant.const import STATE_OFF, STATE_ON, EntityCategory
 from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
-from homeassistant.helpers.device_registry import DeviceInfo
+from homeassistant.helpers.device import async_entity_id_to_device
+from homeassistant.helpers.device_registry import DeviceEntry
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
 from homeassistant.helpers.restore_state import RestoreEntity
 
 from . import VThermConfigEntry, entry_value
 from .const import CONF_VTHERM_ENTITY_ID
-
-VTHERM_DOMAIN = "versatile_thermostat"
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -37,23 +35,16 @@ async def async_setup_entry(
     async_add_entities: AddEntitiesCallback,
 ) -> None:
     """Add the enable switch for this config entry."""
-    # Look up the VTherm's config_entry_id so we can attach our switch to
-    # that device rather than creating a fresh one. Read through the shared
-    # helper so an options-flow change to the VTherm entity lands here too.
+    # Resolve the VTherm's own device so we can attach our switch to it. Read
+    # through the shared helper so an options-flow change to the VTherm entity
+    # lands here too.
     vtherm_entity_id = entry_value(entry, CONF_VTHERM_ENTITY_ID, "")
-    vtherm_config_entry_id: str | None = None
-    if vtherm_entity_id:
-        registry = er.async_get(hass)
-        vtherm_entry = registry.async_get(vtherm_entity_id)
-        if vtherm_entry is not None:
-            vtherm_config_entry_id = vtherm_entry.config_entry_id
+    vtherm_device = (
+        async_entity_id_to_device(hass, vtherm_entity_id) if vtherm_entity_id else None
+    )
 
     async_add_entities(
-        [
-            ProgressiveFanEnabledSwitch(
-                entry, entry.runtime_data.plugin, vtherm_config_entry_id
-            )
-        ]
+        [ProgressiveFanEnabledSwitch(entry, entry.runtime_data.plugin, vtherm_device)]
     )
 
 
@@ -67,20 +58,20 @@ class ProgressiveFanEnabledSwitch(SwitchEntity, RestoreEntity):
     _attr_icon = "mdi:fan-auto"
 
     def __init__(
-        self, entry: ConfigEntry, plugin, vtherm_config_entry_id: str | None
+        self, entry: ConfigEntry, plugin, vtherm_device: DeviceEntry | None
     ) -> None:
         self._entry = entry
         self._plugin = plugin
         self._attr_unique_id = f"{entry.entry_id}_enabled"
         # Default ON. Overridden by any restored state in async_added_to_hass.
         self._attr_is_on = True
-        # Attach the switch to the VTherm's device so it appears alongside
-        # the thermostat's own entities in the UI. VTherm identifies its
-        # devices as ("versatile_thermostat", <its_config_entry_id>).
-        if vtherm_config_entry_id is not None:
-            self._attr_device_info = DeviceInfo(
-                identifiers={(VTHERM_DOMAIN, vtherm_config_entry_id)}
-            )
+        # Attach the switch to the VTherm's device so it appears alongside the
+        # thermostat's own entities in the UI. Point at the device (device_entry)
+        # rather than describe it (device_info): from HA 2026.8 a device_info
+        # lookup only matches devices owned by our own config entry, so it would
+        # miss VTherm's device and silently create a duplicate.
+        if vtherm_device is not None:
+            self.device_entry = vtherm_device
 
     async def async_added_to_hass(self) -> None:
         await super().async_added_to_hass()
