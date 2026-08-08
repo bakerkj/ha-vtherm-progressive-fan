@@ -1,5 +1,37 @@
 # Changelog
 
+## [0.0.4](https://github.com/bakerkj/ha-vtherm-progressive-fan/compare/v0.0.3...v0.0.4) (2026-08-08)
+
+
+### Bug Fixes
+
+* point the switch at VTherm's device instead of describing it ([#25](https://github.com/bakerkj/ha-vtherm-progressive-fan/issues/25)) ([c74d270](https://github.com/bakerkj/ha-vtherm-progressive-fan/commit/c74d270c647a55fb485c7df1ed0757823ca2059a))
+* **pre-commit:** set default_stages so hooks skip commit-msg by default ([#22](https://github.com/bakerkj/ha-vtherm-progressive-fan/issues/22)) ([d69a459](https://github.com/bakerkj/ha-vtherm-progressive-fan/commit/d69a4593c307954e1e79ca723185003523e2df6d))
+
+
+### Miscellaneous Chores
+
+* **deps:** pin uv to 0.12.2 ([#21](https://github.com/bakerkj/ha-vtherm-progressive-fan/issues/21)) ([d9e8196](https://github.com/bakerkj/ha-vtherm-progressive-fan/commit/d9e8196db51a2fe50834a95f9914776daa14921b))
+* **deps:** update anthropics/claude-code-action action to v1.0.183 ([352489b](https://github.com/bakerkj/ha-vtherm-progressive-fan/commit/352489bdf01eabe0b8b4322002befaad14ba688a))
+* **deps:** update anthropics/claude-code-action action to v1.0.183 ([fe96857](https://github.com/bakerkj/ha-vtherm-progressive-fan/commit/fe968572c29f1d2c0c7eeacea39140211aff0fb6))
+* **deps:** update anthropics/claude-code-action action to v1.0.184 ([#23](https://github.com/bakerkj/ha-vtherm-progressive-fan/issues/23)) ([62693f0](https://github.com/bakerkj/ha-vtherm-progressive-fan/commit/62693f0f7033be7df0389d248edcc48111000fc4))
+* **deps:** update dependency uv to ==0.12.* ([80dddd3](https://github.com/bakerkj/ha-vtherm-progressive-fan/commit/80dddd339e6fc55a5bb34a5cf9d90ee46b2611ed))
+* **deps:** update dependency uv to ==0.12.* ([9a568aa](https://github.com/bakerkj/ha-vtherm-progressive-fan/commit/9a568aa356e0e308d1f03545a42600065579f95e))
+* **deps:** update github-actions ([#24](https://github.com/bakerkj/ha-vtherm-progressive-fan/issues/24)) ([de20c8f](https://github.com/bakerkj/ha-vtherm-progressive-fan/commit/de20c8f8b0d8152c0ff98cd3f585327e1a36261f))
+* **deps:** update home-assistant/actions digest to ab22029 ([5945619](https://github.com/bakerkj/ha-vtherm-progressive-fan/commit/59456199feaf6b7a8b0de4ed70744341bf911def))
+* **deps:** update home-assistant/actions digest to ab22029 ([2c75855](https://github.com/bakerkj/ha-vtherm-progressive-fan/commit/2c75855e59c409c21ea123ef9d2274aa238a3c72))
+* **deps:** update j178/prek-action action to v3 ([9359ee9](https://github.com/bakerkj/ha-vtherm-progressive-fan/commit/9359ee9df0948aa06064ac890d893d644cd2d323))
+* **deps:** update j178/prek-action action to v3 ([2c34acf](https://github.com/bakerkj/ha-vtherm-progressive-fan/commit/2c34acf5a5d5ed97641152fc329a1193912cf715))
+* **deps:** update pre-commit hook astral-sh/ruff-pre-commit to v0.16.1 ([fd6a38c](https://github.com/bakerkj/ha-vtherm-progressive-fan/commit/fd6a38cc051a8df38a8a8d30d5f594f8738369a5))
+* **deps:** update pre-commit hook astral-sh/ruff-pre-commit to v0.16.1 ([31ad69c](https://github.com/bakerkj/ha-vtherm-progressive-fan/commit/31ad69c490f4810e476e8c6b93c26691c57df77c))
+
+
+### Continuous Integration
+
+* add hassfest manifest validation ([115bd7d](https://github.com/bakerkj/ha-vtherm-progressive-fan/commit/115bd7d0892cb72daf162897ccdcc2fcab160301))
+* add hassfest manifest validation workflow ([ec57552](https://github.com/bakerkj/ha-vtherm-progressive-fan/commit/ec57552b418f7c243c40a03cd1c5fc5bc2d1f6bb))
+* enable renovate auto-merge for CI-only updates ([#20](https://github.com/bakerkj/ha-vtherm-progressive-fan/issues/20)) ([1122202](https://github.com/bakerkj/ha-vtherm-progressive-fan/commit/11222021f3351ed2c3d92b78ceee834f701307c8))
+
 ## [0.0.3](https://github.com/bakerkj/ha-vtherm-progressive-fan/compare/v0.0.2...v0.0.3) (2026-07-24)
 
 
