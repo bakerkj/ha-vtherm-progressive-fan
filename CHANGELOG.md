@@ -1,5 +1,50 @@
 # Changelog
 
+## [0.0.5](https://github.com/bakerkj/ha-vtherm-progressive-fan/compare/v0.0.4...v0.0.5) (2026-09-25)
+
+
+### Bug Fixes
+
+* **renovate:** don't duplicate runs-on detection with the built-in manager ([#50](https://github.com/bakerkj/ha-vtherm-progressive-fan/issues/50)) ([fec6fce](https://github.com/bakerkj/ha-vtherm-progressive-fan/commit/fec6fce6357fcd4f68c812ab17718eef23be5a08))
+
+
+### Miscellaneous Chores
+
+* **deps:** update anthropics/claude-code-action action to v1.0.190 ([#26](https://github.com/bakerkj/ha-vtherm-progressive-fan/issues/26)) ([793ffb8](https://github.com/bakerkj/ha-vtherm-progressive-fan/commit/793ffb83ce7f02f8940695f26da8e4409bc61b0c))
+* **deps:** update anthropics/claude-code-action action to v1.0.191 ([#29](https://github.com/bakerkj/ha-vtherm-progressive-fan/issues/29)) ([e2815ca](https://github.com/bakerkj/ha-vtherm-progressive-fan/commit/e2815ca4ea0761eaace05c7ee3891c07f7deabfa))
+* **deps:** update anthropics/claude-code-action action to v1.0.193 ([#32](https://github.com/bakerkj/ha-vtherm-progressive-fan/issues/32)) ([f5bdac2](https://github.com/bakerkj/ha-vtherm-progressive-fan/commit/f5bdac26ba20f7465a2d34a8beee654fe65e6f01))
+* **deps:** update anthropics/claude-code-action action to v1.0.194 ([#35](https://github.com/bakerkj/ha-vtherm-progressive-fan/issues/35)) ([777eddc](https://github.com/bakerkj/ha-vtherm-progressive-fan/commit/777eddcd22c501c3a468739f6512918a02acf256))
+* **deps:** update anthropics/claude-code-action action to v1.0.205 ([#37](https://github.com/bakerkj/ha-vtherm-progressive-fan/issues/37)) ([a311d47](https://github.com/bakerkj/ha-vtherm-progressive-fan/commit/a311d471cbfd55e270ff8ce9d0ac72d2d2c9ef34))
+* **deps:** update anthropics/claude-code-action action to v1.0.211 ([#43](https://github.com/bakerkj/ha-vtherm-progressive-fan/issues/43)) ([f039779](https://github.com/bakerkj/ha-vtherm-progressive-fan/commit/f039779e6533319b6e639080b850855d8d154a0b))
+* **deps:** update anthropics/claude-code-action action to v1.0.217 ([#45](https://github.com/bakerkj/ha-vtherm-progressive-fan/issues/45)) ([fbd3317](https://github.com/bakerkj/ha-vtherm-progressive-fan/commit/fbd3317c235d35a07bc217289f5f7577c9945c9f))
+* **deps:** update anthropics/claude-code-action action to v1.0.226 ([#56](https://github.com/bakerkj/ha-vtherm-progressive-fan/issues/56)) ([483af5a](https://github.com/bakerkj/ha-vtherm-progressive-fan/commit/483af5ad911be0fe25ebe8d00ee6d311c584eab2))
+* **deps:** update astral-sh/setup-uv action to v10 ([#34](https://github.com/bakerkj/ha-vtherm-progressive-fan/issues/34)) ([7bb6de4](https://github.com/bakerkj/ha-vtherm-progressive-fan/commit/7bb6de4f83404b5cf5476e16bf97664eef283545))
+* **deps:** update astral-sh/setup-uv action to v10.2.0 ([#58](https://github.com/bakerkj/ha-vtherm-progressive-fan/issues/58)) ([546bef7](https://github.com/bakerkj/ha-vtherm-progressive-fan/commit/546bef7c6e444867e60073ec518b5b56b90a4c40))
+* **deps:** update dependency ubuntu to v26 ([#52](https://github.com/bakerkj/ha-vtherm-progressive-fan/issues/52)) ([048dbc4](https://github.com/bakerkj/ha-vtherm-progressive-fan/commit/048dbc4d93b3866bc0adf85ce9aaf9c5bd0996c8))
+* **deps:** update dependency uv to v0.12.10 ([#44](https://github.com/bakerkj/ha-vtherm-progressive-fan/issues/44)) ([da9019b](https://github.com/bakerkj/ha-vtherm-progressive-fan/commit/da9019b36bff7e033065b395db2ee7d566494a7b))
+* **deps:** update dependency uv to v0.12.14 ([#46](https://github.com/bakerkj/ha-vtherm-progressive-fan/issues/46)) ([03a8852](https://github.com/bakerkj/ha-vtherm-progressive-fan/commit/03a8852b13b868965bfdb1a2efa817cdc93d3675))
+* **deps:** update dependency uv to v0.12.15 ([#48](https://github.com/bakerkj/ha-vtherm-progressive-fan/issues/48)) ([d81cfaa](https://github.com/bakerkj/ha-vtherm-progressive-fan/commit/d81cfaa6598a759f42e7ae15951e2b226e25bff5))
+* **deps:** update dependency uv to v0.12.17 ([#54](https://github.com/bakerkj/ha-vtherm-progressive-fan/issues/54)) ([129f7d7](https://github.com/bakerkj/ha-vtherm-progressive-fan/commit/129f7d717a187aaf140e2380aa47022fd7d19e80))
+* **deps:** update dependency uv to v0.12.19 ([#61](https://github.com/bakerkj/ha-vtherm-progressive-fan/issues/61)) ([719ea6f](https://github.com/bakerkj/ha-vtherm-progressive-fan/commit/719ea6fb851a425d4a2c992d32f1906674217e6a))
+* **deps:** update dependency uv to v0.12.3 ([#27](https://github.com/bakerkj/ha-vtherm-progressive-fan/issues/27)) ([1835d06](https://github.com/bakerkj/ha-vtherm-progressive-fan/commit/1835d06ac4c7e8513bf7706f94014a71bafc349c))
+* **deps:** update dependency uv to v0.12.5 ([#33](https://github.com/bakerkj/ha-vtherm-progressive-fan/issues/33)) ([832e9d8](https://github.com/bakerkj/ha-vtherm-progressive-fan/commit/832e9d81690862789aadf51a3dee862eaa576f3f))
+* **deps:** update dependency uv to v0.12.7 ([#38](https://github.com/bakerkj/ha-vtherm-progressive-fan/issues/38)) ([4528788](https://github.com/bakerkj/ha-vtherm-progressive-fan/commit/4528788a6c720aaf6806ed899590399480512e0a))
+* **deps:** update dependency uv to v0.12.8 ([#40](https://github.com/bakerkj/ha-vtherm-progressive-fan/issues/40)) ([ab8f173](https://github.com/bakerkj/ha-vtherm-progressive-fan/commit/ab8f17382d0382864e1ad849d42a26d988c6a2ad))
+* **deps:** update dependency uv to v0.12.9 ([#41](https://github.com/bakerkj/ha-vtherm-progressive-fan/issues/41)) ([39b2088](https://github.com/bakerkj/ha-vtherm-progressive-fan/commit/39b2088edea69d326f75eafeed504d6fd5392562))
+* **deps:** update github-actions ([#47](https://github.com/bakerkj/ha-vtherm-progressive-fan/issues/47)) ([93f7643](https://github.com/bakerkj/ha-vtherm-progressive-fan/commit/93f7643d11214982ae373c9d0d2dfdd21daac916))
+* **deps:** update github-actions ([#57](https://github.com/bakerkj/ha-vtherm-progressive-fan/issues/57)) ([dee6c0d](https://github.com/bakerkj/ha-vtherm-progressive-fan/commit/dee6c0d5bb609fa09dd1b67b7f24bcd23e258569))
+* **deps:** update pre-commit hook alessandrojcm/commitlint-pre-commit-hook to v9.27.0 ([#59](https://github.com/bakerkj/ha-vtherm-progressive-fan/issues/59)) ([4107f33](https://github.com/bakerkj/ha-vtherm-progressive-fan/commit/4107f330fb35c4a2262f31e781c862cc6b39d2af))
+* **deps:** update pre-commit hook astral-sh/ruff-pre-commit to v0.16.3 ([#31](https://github.com/bakerkj/ha-vtherm-progressive-fan/issues/31)) ([d351a52](https://github.com/bakerkj/ha-vtherm-progressive-fan/commit/d351a520c83c3ccbe5e5f9a18fc94a787dc1b637))
+* **deps:** update pre-commit hook astral-sh/ruff-pre-commit to v0.16.4 ([#36](https://github.com/bakerkj/ha-vtherm-progressive-fan/issues/36)) ([fd99e40](https://github.com/bakerkj/ha-vtherm-progressive-fan/commit/fd99e40255d5e0c7b69b8f2efb176cee240f3f9e))
+* **deps:** update pre-commit hook astral-sh/ruff-pre-commit to v0.16.5 ([#39](https://github.com/bakerkj/ha-vtherm-progressive-fan/issues/39)) ([9e5b2e1](https://github.com/bakerkj/ha-vtherm-progressive-fan/commit/9e5b2e18f98d520746f6eed0c52a6c2254880a0e))
+* **deps:** update pre-commit hook astral-sh/ruff-pre-commit to v0.16.6 ([#42](https://github.com/bakerkj/ha-vtherm-progressive-fan/issues/42)) ([ac4a5d2](https://github.com/bakerkj/ha-vtherm-progressive-fan/commit/ac4a5d2fd42986592224eb8f6ecd5fe50550dca8))
+* **deps:** update pre-commit hook astral-sh/ruff-pre-commit to v0.16.7 ([#49](https://github.com/bakerkj/ha-vtherm-progressive-fan/issues/49)) ([7438026](https://github.com/bakerkj/ha-vtherm-progressive-fan/commit/743802664a605c1ec694355ee2b81bd1aed7bd2d))
+* **deps:** update pre-commit hook rbubley/mirrors-prettier to v3.9.7 ([#53](https://github.com/bakerkj/ha-vtherm-progressive-fan/issues/53)) ([625b29d](https://github.com/bakerkj/ha-vtherm-progressive-fan/commit/625b29d1c9ce8bb08b2408dc2ecedab0ce3e3163))
+* **deps:** update pre-commit hooks ([#30](https://github.com/bakerkj/ha-vtherm-progressive-fan/issues/30)) ([6959cfc](https://github.com/bakerkj/ha-vtherm-progressive-fan/commit/6959cfc39a67e860ca2463098d3a0f419903af41))
+* **deps:** update pre-commit hooks ([#55](https://github.com/bakerkj/ha-vtherm-progressive-fan/issues/55)) ([8966619](https://github.com/bakerkj/ha-vtherm-progressive-fan/commit/896661908b349ad6e664f86bd990a4ae006b31a6))
+* **deps:** update pre-commit hooks ([#60](https://github.com/bakerkj/ha-vtherm-progressive-fan/issues/60)) ([993d504](https://github.com/bakerkj/ha-vtherm-progressive-fan/commit/993d5040b61daf816e6f4cdfdc7bfc251b075d41))
+* switch actionlint pre-commit hook from rhysd (stale) to kjanat fork ([#51](https://github.com/bakerkj/ha-vtherm-progressive-fan/issues/51)) ([b651cf5](https://github.com/bakerkj/ha-vtherm-progressive-fan/commit/b651cf5e53b7e8afbf2b4aca7bb6881e66afd4b3))
+
 ## [0.0.4](https://github.com/bakerkj/ha-vtherm-progressive-fan/compare/v0.0.3...v0.0.4) (2026-08-08)
 
 
