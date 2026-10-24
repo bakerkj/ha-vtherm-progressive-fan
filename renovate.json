@@ -124,7 +124,6 @@
   "lockFileMaintenance": {
     "enabled": true,
     "schedule": ["before 6pm on friday"],
-    "automerge": false,
-    "minimumReleaseAge": "3 days"
+    "automerge": false
   }
 }
