@@ -19,7 +19,7 @@ from homeassistant.config_entries import ConfigEntry
 from homeassistant.const import STATE_OFF, STATE_ON, EntityCategory
 from homeassistant.core import HomeAssistant
 from homeassistant.helpers.device import async_entity_id_to_device
-from homeassistant.helpers.device_registry import DeviceEntry
+from homeassistant.helpers.device_registry import AnyDeviceEntry
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
 from homeassistant.helpers.restore_state import RestoreEntity
 
@@ -58,7 +58,7 @@ class ProgressiveFanEnabledSwitch(SwitchEntity, RestoreEntity):
     _attr_icon = "mdi:fan-auto"
 
     def __init__(
-        self, entry: ConfigEntry, plugin, vtherm_device: DeviceEntry | None
+        self, entry: ConfigEntry, plugin, vtherm_device: AnyDeviceEntry | None
     ) -> None:
         self._entry = entry
         self._plugin = plugin
