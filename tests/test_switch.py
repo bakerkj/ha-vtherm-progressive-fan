@@ -127,11 +127,12 @@ async def test_registering_the_switch_creates_no_extra_device(
     our own config entry, misses VTherm's device, and creates a duplicate.
     """
     entry = _our_entry(hass, VTHERM_ENTITY_ID)
-    before = set(dr.async_get(hass).devices)
+    # HA 2026.10's registry.devices iterates DeviceEntry values (unhashable).
+    before = {d.id for d in dr.async_get(hass).devices}
 
     await _register(hass, entry, await _build(hass, entry))
 
-    assert set(dr.async_get(hass).devices) == before
+    assert {d.id for d in dr.async_get(hass).devices} == before
 
 
 async def test_registered_switch_lands_on_the_vtherm_device(
