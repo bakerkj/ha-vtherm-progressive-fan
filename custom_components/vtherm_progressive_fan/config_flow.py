@@ -7,7 +7,6 @@ from __future__ import annotations
 from collections.abc import Mapping
 from typing import Any
 
-import voluptuous as vol
 from homeassistant import config_entries
 from homeassistant.components.climate import DOMAIN as CLIMATE_DOMAIN
 from homeassistant.components.sensor import DOMAIN as SENSOR_DOMAIN
@@ -20,6 +19,13 @@ from homeassistant.helpers.selector import (
     SelectSelectorConfig,
     SelectSelectorMode,
 )
+
+try:
+    # HA 2026.9 replaced voluptuous with the API-compatible probatio and types
+    # flow schemas as probatio; build ours with whichever this HA ships.
+    import probatio as vol
+except ImportError:  # HA < 2026.9
+    import voluptuous as vol  # type: ignore[no-redef]
 
 from .const import (
     CONF_CLIMATE_ENTITY_ID,
